@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="55.425" viewBox="0 0 96 55.425">
+  <title>Asanoha hex mesh tile</title>
+  <desc>Seamless hexagon outlines with interior diagonals (white stroke, transparent background)</desc>
+  <g fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="geometricPrecision">
+    <!-- Parameters: flat-top hex side a=32; pattern size 3a × √3·a = 96 × 55.425 -->
+    <!-- Hex 1 center (32, 27.7125) -->
+    <polygon points="64,27.7125 48,55.425 16,55.425 0,27.7125 16,0 48,0"/>
+    <path d="M 0,27.7125 L 64,27.7125"/>
+    <path d="M 16,0 L 48,55.425"/>
+    <path d="M 48,0 L 16,55.425"/>
+
+    <!-- Hex 2 center (64, 27.7125) -->
+    <polygon points="96,27.7125 80,55.425 48,55.425 32,27.7125 48,0 80,0"/>
+    <path d="M 32,27.7125 L 96,27.7125"/>
+    <path d="M 48,0 L 80,55.425"/>
+    <path d="M 80,0 L 48,55.425"/>
+  </g>
+</svg>

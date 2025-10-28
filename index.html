@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>David Cody — Links</title>
+    <meta name="description" content="Links to projects and sites by David Cody.">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preload" as="image" href="/David.jpg">
+    <link rel="canonical" href="https://davidcody.site/">
+    <meta name="theme-color" content="#f59e0b">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="David Cody — Links">
+    <meta property="og:description" content="Find my projects and sites in one place.">
+    <meta property="og:url" content="https://davidcody.site/">
+    <meta property="og:image" content="https://davidcody.site/David.jpg">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="David Cody — Links">
+    <meta name="twitter:description" content="Find my projects and sites in one place.">
+    <meta name="twitter:image" content="https://davidcody.site/favicon.svg">
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+    <div class="bg-h" aria-hidden="true"></div>
+    <div class="bg-d" aria-hidden="true"></div>
+    <div class="bg-d2" aria-hidden="true"></div>
+    <div class="bg-v2" aria-hidden="true"></div>
+    <div class="bg-h2" aria-hidden="true"></div>
+    <!-- RGB wave overlays (colorize the lines) -->
+    <div class="rgb rgb-v" aria-hidden="true"></div>
+    <div class="rgb rgb-h" aria-hidden="true"></div>
+    <div class="rgb rgb-d" aria-hidden="true"></div>
+    <div class="rgb rgb-d2" aria-hidden="true"></div>
+    <div class="rgb rgb-v2" aria-hidden="true"></div>
+    <div class="rgb rgb-h2" aria-hidden="true"></div>
+    <main class="wrap">
+      <header class="hero">
+        <div class="hero-avatar">
+          <img class="avatar" src="./David.jpg" alt="Photo of David Cody" width="96" height="96" />
+        </div>
+        <div class="hero-text">
+          <h1>David Cody</h1>
+          <p class="tagline">Links to my work and projects</p>
+        </div>
+      </header>
+
+      <nav class="links" aria-label="Links">
+        <a class="link-card" href="https://honeycomblab.art" target="_blank" rel="noopener noreferrer">
+          <img class="logo" src="./honeycomb_lab.png" alt="Honeycomb Lab logo" width="44" height="44" loading="lazy" decoding="async" />
+          <div class="text">
+            <span class="label">Honeycomb Lab</span>
+            <span class="desc">The sonic forge. Beats, sound design, and musical alchemy.</span>
+          </div>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="link-card" href="https://hivemindstudio.art" target="_blank" rel="noopener noreferrer">
+          <img class="logo" src="./hivemind_studio.png" alt="Hivemind Studio logo" width="44" height="44" loading="lazy" decoding="async" />
+          <div class="text">
+            <span class="label">Hivemind Studio</span>
+            <span class="desc">The creative engine. Games, systems, and emergent worlds.</span>
+          </div>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="link-card" href="https://chronosengine.online" target="_blank" rel="noopener noreferrer">
+          <img class="logo" src="./chronos_engine.png" alt="Chronos Engine logo" width="44" height="44" loading="lazy" decoding="async" />
+          <div class="text">
+            <span class="label">Chronos Engine</span>
+            <span class="desc">The temporal OS. Productivity, rhythm, and mastery of time.</span>
+          </div>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="link-card" href="https://metaplasma.online" target="_blank" rel="noopener noreferrer">
+          <img class="logo" src="./metaplasma.png" alt="Metaplasma logo" width="44" height="44" loading="lazy" decoding="async" />
+          <div class="text">
+            <span class="label">Metaplasma</span>
+            <span class="desc">The symbolic AI. A fractal network of meaning and mind.</span>
+          </div>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="link-card" href="https://shinobitactics.online" target="_blank" rel="noopener noreferrer">
+          <img class="logo" src="./shinobi_tactics.jpg" alt="Shinobi Tactics logo" width="44" height="44" loading="lazy" decoding="async" />
+          <div class="text">
+            <span class="label">Shinobi Tactics</span>
+            <span class="desc">The tactical realm. Strategy, stealth, and the way of the ninja.</span>
+          </div>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </nav>
+
+      <footer class="footer">
+        <small>© <span id="year"></span> David Cody</small>
+      </footer>
+    </main>
+
+    <script>
+      // Keep the year current
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>

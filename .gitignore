@@ -1,0 +1,14 @@
+# OS/Editor junk
+.DS_Store
+Thumbs.db
+*.log
+
+# Local temp
+/.geom_tmp/
+/backup/
+/CON
+
+# Node (if added later)
+node_modules/
+dist/
+build/
