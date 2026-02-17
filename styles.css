@@ -479,6 +479,22 @@ h1 {
 .footer {
   color: var(--muted);
   text-align: center;
+  display: grid;
+  gap: 10px;
+}
+
+.soundcloud-player {
+  width: min(460px, 100%);
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--glass-bg), var(--glass-bg-2));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.soundcloud-player iframe {
+  display: block;
 }
 
 @supports not (color: oklch(50% 0.2 30)) {
@@ -842,6 +858,27 @@ body {
   /* Reveal from left to right */
   clip-path: inset(0 100% 0 0);
   animation: reveal-right 1400ms cubic-bezier(.22,.7,.18,1) forwards;
+}
+
+/* Fixed brand background color (no animated color shifting) */
+:root {
+  --bg: #E14011;
+  --text: #ffffff;
+  --muted: #ffffff;
+  --bg-overlay: rgba(255, 255, 255, 0.16);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #E14011;
+    --text: #ffffff;
+    --muted: #ffffff;
+    --bg-overlay: rgba(255, 255, 255, 0.16);
+  }
+}
+
+.rgb {
+  display: none !important;
 }
 
 
