@@ -16,6 +16,7 @@
   --glass-bg-2: rgba(255,255,255,0.02);
   --glass-border: rgba(255,255,255,0.14);
   --glass-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --bg-overlay: rgba(0,0,0,0.38);
 }
 
 @media (prefers-color-scheme: light) {
@@ -89,6 +90,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 .wrap {
   max-width: 640px;
   margin: 0 auto;
@@ -99,6 +101,14 @@ body {
   gap: 28px;
   position: relative;
   z-index: 1; /* ensure background lines sit beneath all content */
+}
+
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--bg-overlay);
 }
 
 .hero {
@@ -147,6 +157,76 @@ body {
 .hero h1 {
   margin: 0;
   font-size: 1.9rem;
+}
+
+.hero-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pawn-link {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(135deg, var(--glass-bg), var(--glass-bg-2));
+  box-shadow: var(--glass-shadow);
+  color: var(--text);
+  text-decoration: none;
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  transition: transform 140ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.pawn-link img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.pawn-link::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px);
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(135deg, var(--glass-bg), var(--glass-bg-2));
+  color: var(--text);
+  font-size: 0.68rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms ease, transform 140ms ease;
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
+  z-index: 3;
+}
+
+.pawn-link:hover::after,
+.pawn-link:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.pawn-link:hover,
+.pawn-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--accent) 35%, var(--glass-border));
+  box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+}
+
+.pawn-link:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--accent) 45%, transparent);
+  outline-offset: 2px;
 }
 
 .hero .tagline {
@@ -415,7 +495,14 @@ h1 {
     border: 1px solid var(--border);
     box-shadow: 0 1px 0 rgba(0,0,0,0.08);
   }
+
+  .pawn-link {
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+  }
 }
+
 
 /* --- Pattern Staging Overrides --- */
 :root {
