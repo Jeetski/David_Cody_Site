@@ -191,6 +191,10 @@ body {
   display: block;
 }
 
+.pawn-link img {
+  filter: brightness(0) invert(1);
+}
+
 .pawn-link::after,
 .github-link::after {
   content: attr(data-tip);
@@ -862,18 +866,18 @@ body {
 
 /* Fixed brand background color (no animated color shifting) */
 :root {
-  --bg: #E14011;
+  --bg: #000000;
   --text: #ffffff;
   --muted: #ffffff;
-  --bg-overlay: rgba(255, 255, 255, 0.16);
+  --bg-overlay: transparent;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg: #E14011;
+    --bg: #000000;
     --text: #ffffff;
     --muted: #ffffff;
-    --bg-overlay: rgba(255, 255, 255, 0.16);
+    --bg-overlay: transparent;
   }
 }
 
