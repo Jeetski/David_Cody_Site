@@ -165,7 +165,8 @@ body {
   gap: 10px;
 }
 
-.pawn-link {
+.pawn-link,
+.github-link {
   width: 30px;
   height: 30px;
   display: inline-flex;
@@ -183,13 +184,15 @@ body {
   transition: transform 140ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
 
-.pawn-link img {
+.pawn-link img,
+.github-link img {
   width: 18px;
   height: 18px;
   display: block;
 }
 
-.pawn-link::after {
+.pawn-link::after,
+.github-link::after {
   content: attr(data-tip);
   position: absolute;
   left: 50%;
@@ -212,19 +215,24 @@ body {
 }
 
 .pawn-link:hover::after,
-.pawn-link:focus-visible::after {
+.pawn-link:focus-visible::after,
+.github-link:hover::after,
+.github-link:focus-visible::after {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
 
 .pawn-link:hover,
-.pawn-link:focus-visible {
+.pawn-link:focus-visible,
+.github-link:hover,
+.github-link:focus-visible {
   transform: translateY(-2px);
   border-color: color-mix(in oklab, var(--accent) 35%, var(--glass-border));
   box-shadow: 0 10px 24px rgba(0,0,0,0.28);
 }
 
-.pawn-link:focus-visible {
+.pawn-link:focus-visible,
+.github-link:focus-visible {
   outline: 2px solid color-mix(in oklab, var(--accent) 45%, transparent);
   outline-offset: 2px;
 }
@@ -496,7 +504,8 @@ h1 {
     box-shadow: 0 1px 0 rgba(0,0,0,0.08);
   }
 
-  .pawn-link {
+  .pawn-link,
+  .github-link {
     background: var(--card);
     border: 1px solid var(--border);
     box-shadow: 0 1px 0 rgba(0,0,0,0.08);
