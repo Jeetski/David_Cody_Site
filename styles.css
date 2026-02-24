@@ -456,6 +456,43 @@ h1 {
   font-weight: 600;
 }
 
+.status-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  vertical-align: middle;
+  border: 1px solid transparent;
+}
+
+.badge-alpha {
+  color: #fff3cc;
+  background: rgba(245, 158, 11, 0.25);
+  border-color: rgba(245, 158, 11, 0.45);
+}
+
+.badge-hold {
+  color: #ffd5d5;
+  background: rgba(239, 68, 68, 0.25);
+  border-color: rgba(239, 68, 68, 0.45);
+}
+
+.badge-dev {
+  color: #d9f5ff;
+  background: rgba(14, 165, 233, 0.25);
+  border-color: rgba(14, 165, 233, 0.45);
+}
+
+.patreon-icon {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+
 .text {
   display: grid;
   gap: 6px;
@@ -549,9 +586,16 @@ h1 {
   :root { --line: rgba(0,0,0,0.18); }
 }
 
-/* Override body background to solid dark */
+/* Override body background to use static image */
 body {
-  background: var(--bg);
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("./background.jpg");
+  background-color: var(--bg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Stage 1: vertical lines that peek in from top */
