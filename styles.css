@@ -416,18 +416,20 @@ h1 {
   width: calc(100% - 26px);
 }
 
-@media (hover: none) {
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
   .honey-links {
-    max-height: 120px;
+    max-height: none;
     opacity: 1;
     transform: none;
+    overflow: visible;
     pointer-events: auto;
   }
 
   .child-links {
-    max-height: 420px;
+    max-height: none;
     opacity: 1;
     transform: none;
+    overflow: visible;
     pointer-events: auto;
   }
 
