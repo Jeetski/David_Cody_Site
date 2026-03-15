@@ -126,6 +126,9 @@ body {
   backdrop-filter: none;
   inline-size: min(400px, 100%);
   justify-self: center;
+  position: relative;
+  z-index: 20;
+  isolation: isolate;
 }
 
 .hero-avatar {
@@ -154,6 +157,8 @@ body {
   box-shadow: var(--glass-shadow);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   backdrop-filter: blur(14px) saturate(140%);
+  position: relative;
+  z-index: 21;
   opacity: 0;
   animation: peek-fade-up 700ms cubic-bezier(.22,.7,.18,1) 220ms forwards;
 }
