@@ -191,7 +191,6 @@ body {
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   backdrop-filter: blur(14px) saturate(140%);
   transition: transform 140ms ease, border-color 200ms ease, box-shadow 200ms ease;
-  z-index: 50;
 }
 
 .pawn-link img,
@@ -203,37 +202,6 @@ body {
 
 .pawn-link img {
   filter: brightness(0) invert(1);
-}
-
-.pawn-link::after,
-.github-link::after {
-  content: attr(data-tip);
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 8px);
-  transform: translateX(-50%) translateY(4px);
-  padding: 4px 8px;
-  border-radius: 8px;
-  border: 1px solid var(--glass-border);
-  background: linear-gradient(135deg, var(--glass-bg), var(--glass-bg-2));
-  color: var(--text);
-  font-size: 0.68rem;
-  line-height: 1.2;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 140ms ease, transform 140ms ease;
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
-  backdrop-filter: blur(10px) saturate(140%);
-  z-index: 1000;
-}
-
-.pawn-link:hover::after,
-.pawn-link:focus-visible::after,
-.github-link:hover::after,
-.github-link:focus-visible::after {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
 }
 
 .pawn-link:hover,
@@ -249,6 +217,34 @@ body {
 .github-link:focus-visible {
   outline: 2px solid color-mix(in oklab, var(--accent) 45%, transparent);
   outline-offset: 2px;
+}
+
+.floating-tip {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(135deg, var(--glass-bg), var(--glass-bg-2));
+  color: var(--text);
+  font-size: 0.68rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -4px);
+  transition: opacity 140ms ease, transform 140ms ease, visibility 140ms ease;
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
+  z-index: 2000;
+}
+
+.floating-tip.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -8px);
 }
 
 .hero .tagline {

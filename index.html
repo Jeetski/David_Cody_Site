@@ -190,6 +190,58 @@
 
       const toggleButton = document.getElementById('soundcloud-toggle');
       const soundcloudPanel = document.getElementById('soundcloud-panel');
+      const floatingTip = document.createElement('div');
+      floatingTip.className = 'floating-tip';
+      floatingTip.setAttribute('role', 'tooltip');
+      document.body.appendChild(floatingTip);
+
+      const tipLinks = document.querySelectorAll('.pawn-link[data-tip], .github-link[data-tip]');
+      let activeTipLink = null;
+
+      function positionFloatingTip(link) {
+        const rect = link.getBoundingClientRect();
+        const tipRect = floatingTip.getBoundingClientRect();
+        const top = Math.max(8, rect.top - tipRect.height - 8);
+        const left = rect.left + (rect.width / 2);
+
+        floatingTip.style.top = `${top}px`;
+        floatingTip.style.left = `${left}px`;
+      }
+
+      function showFloatingTip(link) {
+        activeTipLink = link;
+        floatingTip.textContent = link.dataset.tip || '';
+        floatingTip.classList.add('is-visible');
+        positionFloatingTip(link);
+      }
+
+      function hideFloatingTip(link) {
+        if (link && activeTipLink !== link) {
+          return;
+        }
+
+        activeTipLink = null;
+        floatingTip.classList.remove('is-visible');
+      }
+
+      tipLinks.forEach((link) => {
+        link.addEventListener('mouseenter', () => showFloatingTip(link));
+        link.addEventListener('focus', () => showFloatingTip(link));
+        link.addEventListener('mouseleave', () => hideFloatingTip(link));
+        link.addEventListener('blur', () => hideFloatingTip(link));
+      });
+
+      window.addEventListener('scroll', () => {
+        if (activeTipLink) {
+          positionFloatingTip(activeTipLink);
+        }
+      }, { passive: true });
+
+      window.addEventListener('resize', () => {
+        if (activeTipLink) {
+          positionFloatingTip(activeTipLink);
+        }
+      });
 
       toggleButton.addEventListener('click', () => {
         const isOpen = toggleButton.getAttribute('aria-expanded') === 'true';
