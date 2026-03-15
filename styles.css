@@ -186,6 +186,7 @@ body {
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   backdrop-filter: blur(14px) saturate(140%);
   transition: transform 140ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  z-index: 50;
 }
 
 .pawn-link img,
@@ -219,7 +220,7 @@ body {
   transition: opacity 140ms ease, transform 140ms ease;
   -webkit-backdrop-filter: blur(10px) saturate(140%);
   backdrop-filter: blur(10px) saturate(140%);
-  z-index: 3;
+  z-index: 1000;
 }
 
 .pawn-link:hover::after,
